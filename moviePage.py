@@ -1,8 +1,11 @@
 import customtkinter
 from PIL import Image
 from tkVideoPlayer import TkinterVideo
-import pygame
 from movieData import moviesData
+import os
+
+os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
+import pygame
 
 
 class moviePage(customtkinter.CTkToplevel):
