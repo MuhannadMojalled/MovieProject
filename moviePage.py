@@ -2,12 +2,14 @@ import customtkinter
 from PIL import Image
 from tkVideoPlayer import TkinterVideo
 import pygame
+from movieData import moviesData
 
 
 class moviePage(customtkinter.CTkToplevel):
-    def __init__(self, master, title):
+    def __init__(self, master, movieId):
         super().__init__()
-        self.title(title)
+        movieData = moviesData.getMovieData(movieId)
+        self.title(movieData[0])
         self.geometry("1000x650")
         self.minsize(1000, 650)
         # main zero
@@ -52,17 +54,30 @@ class moviePage(customtkinter.CTkToplevel):
         )
         frame3.pack_propagate(0)
 
-        moreinfo = customtkinter.CTkLabel(
+        year = customtkinter.CTkLabel(
             frame3,
-            text="""\nMore Info
-            Released: 2001
-            Age rating: PG
-            Duration: 1h 30m""",
+            text="\nAge rating: " + movieData[3],
             font=("Arial", 18),
             wraplength=150,
         )
-        moreinfo.pack(padx=5, pady=5)
-        moreinfo.pack_propagate()
+        year.pack(padx=5, pady=5)
+        year.pack_propagate()
+        age = customtkinter.CTkLabel(
+            frame3,
+            text="\nYear: " + movieData[2],
+            font=("Arial", 18),
+            wraplength=150,
+        )
+        age.pack(padx=5, pady=5)
+        age.pack_propagate()
+        duration = customtkinter.CTkLabel(
+            frame3,
+            text="\nDuration: " + movieData[1],
+            font=("Arial", 18),
+            wraplength=150,
+        )
+        duration.pack(padx=5, pady=5)
+        duration.pack_propagate()
 
         # Movie title frame
         frame4 = customtkinter.CTkFrame(
@@ -76,7 +91,7 @@ class moviePage(customtkinter.CTkToplevel):
         )
         frame4.pack_propagate(0)
 
-        title = customtkinter.CTkLabel(frame4, text="Shrek", font=("Arial", 25))
+        title = customtkinter.CTkLabel(frame4, text=movieData[0], font=("Arial", 25))
         title.pack(padx=5, pady=5)
 
         # Movie description frame
@@ -89,27 +104,37 @@ class moviePage(customtkinter.CTkToplevel):
             anchor="ne",
         )
         frame5.pack_propagate(0)
-        Desc = customtkinter.CTkLabel(
+        story = customtkinter.CTkLabel(
             frame5,
-            text="""Movie Description\n
-            A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.\n
-            Directors: Andrew Adamson, Vicky Jenson\n
-            Writers: William SteigTed Elliott, Terry Rossio\n
-            Stars: Mike MyersEddie Murphy, Cameron Diaz""",
+            text="\nStory: " + movieData[6],
             font=("Arial", 25),
             wraplength=650,
         )
-        Desc.pack(padx=5, pady=5)
+        story.pack(padx=5, pady=5)
 
-        img = Image.open(
-            r"C:\Users\muasu\Desktop\Python\380 enviroment\Shrek+Poster.png"
+        director = customtkinter.CTkLabel(
+            frame5,
+            text="Directors: " + movieData[5],
+            font=("Arial", 25),
+            wraplength=650,
         )
+        director.pack(padx=5, pady=5)
+
+        writer = customtkinter.CTkLabel(
+            frame5,
+            text="Writers: " + movieData[4],
+            font=("Arial", 25),
+            wraplength=650,
+        )
+        writer.pack(padx=5, pady=5)
+
+        img = Image.open(movieData[7])
         width, height = 200, 300
         img = img.resize((width, height))
         tkimage = customtkinter.CTkImage(img, size=(200, 300))
         img_label = customtkinter.CTkLabel(
             frame2,
-            text="PG",
+            text=movieData[3],
             text_color="black",
             font=("Arial", 25),
             compound="center",
@@ -123,9 +148,7 @@ class moviePage(customtkinter.CTkToplevel):
             try:
                 paused
             except NameError:
-                pygame.mixer.music.load(
-                    r"C:\Users\muasu\Downloads\y2mate.com - Shrek 2001 Official Trailer.mp3"
-                )
+                pygame.mixer.music.load(movieData[9])
                 pygame.mixer.music.play()
             else:
                 pygame.mixer.music.unpause()
@@ -146,7 +169,7 @@ class moviePage(customtkinter.CTkToplevel):
 
         video_player = TkinterVideo(master=window.tab("Trailer"), scaled=True)
         video_player.pack(padx=20, pady=10, anchor="center", expand=True, fill="both")
-        video_player.load(r"C:\Users\muasu\Downloads\Shrek 2001 Official Trailer.mp4")
+        video_player.load(movieData[8])
 
         buttonPlay = customtkinter.CTkButton(
             master=window.tab("Trailer"),
