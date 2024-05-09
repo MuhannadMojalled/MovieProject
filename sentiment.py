@@ -70,14 +70,6 @@ class sentiment:
 
     # *Delete This After Editing*  Example reviews, Muhanned choice the best method that you would like on providing The Reviews.
     reviews = [
-        "The movie was an incredible journey, I loved every moment!",
-        "It was a decent movie, not too bad but could be better.",
-        "I really disliked the movie. It was boring and too long.",
-        "The plot was interesting, but the execution could have been better.",
-        "Absolutely a masterpiece, stunning visuals and gripping plot!",
-    ]
-    # here is the Review Example, We could choice more reviews Based on movies from LetterBoxed
-    letterBoxedReviews = [
         "got the 4D experience by forgetting to drink water today and watching this extremely dehydrated",
         "not bad if u ever just feel like staring at the color orange and not feeling a single emotion for two and a half hours",
         "favourite movie.",
