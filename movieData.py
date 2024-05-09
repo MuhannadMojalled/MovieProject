@@ -1,9 +1,13 @@
+from sentiment import sentiment
+
+
 class moviesData:
     def __init__(self):
         super().__init__()
 
     def getMovieData(movieId):
-
+        sentimentsObject = sentiment()
+        sentiments = sentimentsObject.getInfo()
         moviesData = {
             "MovieID": [
                 "Movie Name",
@@ -28,6 +32,7 @@ class moviesData:
                 r"movieProject\Assets\Posters\Shrek+Poster.png",
                 r"movieProject\Assets\Trailers\Shrek 2001 Official Trailer.mp4",
                 r"movieProject\Assets\Sounds\y2mate.com - Shrek 2001 Official Trailer.mp3",
+                sentiments,
             ],
         }
         return moviesData[movieId]
