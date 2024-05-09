@@ -4,11 +4,11 @@ from PIL import Image, ImageTk
 from moviePage import moviePage
 
 
-class MainWindow(customtkinter.CTk):
+class main(customtkinter.CTk):
     def __init__(self):
         super().__init__()
         self.title("Main Window")
-        window = customtkinter.CTkFrame(master=self, width=950, height=550)
+        window = customtkinter.CTkFrame(master=self, width=950, height=350)
         window.pack(pady=10, padx=10, side="top")
         window.pack_propagate(False)
         title = customtkinter.CTkLabel(window, text="ALL MOVIES", font=("Arial", 25))
@@ -62,5 +62,5 @@ class MainWindow(customtkinter.CTk):
 if __name__ == "__main__":
     customtkinter.set_appearance_mode("system")
     customtkinter.set_default_color_theme("dark-blue")
-    app = MainWindow()
+    app = main()
     app.mainloop()

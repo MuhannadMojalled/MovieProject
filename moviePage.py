@@ -185,16 +185,60 @@ class moviePage(customtkinter.CTkToplevel):
         )
         buttonPause.pack(pady=5)
 
-        # Frame for movie pic and more info
-        frame30 = customtkinter.CTkFrame(
-            master=window.tab("Reviews"),
-            width=200,
-            height=550,
+        reviews = customtkinter.CTkLabel(
+            window.tab("Reviews"),
+            text="Movie Reviews",
+            font=("Arial", 15),
+            wraplength=150,
         )
-        frame30.pack(
-            pady=10,
-            padx=10,
-            side="left",
-            anchor="sw",
+        reviews.pack(padx=5, pady=5)
+        reviews.pack_propagate()
+        textbox = customtkinter.CTkTextbox(
+            master=window.tab("Reviews"), width=500, height=350
         )
-        frame30.pack_propagate(0)
+        textbox.configure(state="disabled")
+        textbox.pack()
+        textbox.tag_config("Positive", foreground="green")
+        textbox.tag_config("Negative", foreground="red")
+        textbox.tag_config("Neutral", foreground="white")
+
+        for review in movieData[10]:
+            if "Positive" in review[1]:
+                textbox.configure(state="normal")
+                textbox.insert(
+                    "0.0",
+                    str(len(movieData[10]) - (movieData[10].index(review)))
+                    + "- Review: "
+                    + review[0]
+                    + "\nAnalysis: "
+                    + review[1]
+                    + "\n",
+                    tags="Positive",
+                )
+                textbox.configure(state="disabled")
+            elif "Negative" in review[1]:
+                textbox.configure(state="normal")
+                textbox.insert(
+                    "0.0",
+                    str(len(movieData[10]) - (movieData[10].index(review)))
+                    + "- Review: "
+                    + review[0]
+                    + "\nAnalysis: "
+                    + review[1]
+                    + "\n",
+                    tags="Negative",
+                )
+                textbox.configure(state="disabled")
+            else:
+                textbox.configure(state="normal")
+                textbox.insert(
+                    "0.0",
+                    str(len(movieData[10]) - (movieData[10].index(review)))
+                    + "- Review: "
+                    + review[0]
+                    + "\nAnalysis: "
+                    + review[1]
+                    + "\n",
+                    tags="Neutral",
+                )
+                textbox.configure(state="disabled")

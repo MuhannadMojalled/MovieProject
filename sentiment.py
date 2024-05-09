@@ -77,7 +77,7 @@ class sentiment:
     ]
 
     def getInfo(self):
-        print(self.reviews)
         s = self.MovieSentimentReview(self.reviews)
         sentiments = self.returnInfo(s)
+        # print(sentiments)
         return sentiments
