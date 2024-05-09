@@ -60,7 +60,13 @@ frame3.pack(
 frame3.pack_propagate(0)
 
 moreinfo = customtkinter.CTkLabel(
-    frame3, text="more info about the movie", font=("Arial", 20), wraplength=150
+    frame3,
+    text="""\nMore Info
+    Realeas: 2001
+    Age rating: PG
+    Duration: 1h 30m""",
+    font=("Arial", 15),
+    wraplength=150,
 )
 moreinfo.pack(padx=5, pady=5)
 moreinfo.pack_propagate()
@@ -77,7 +83,7 @@ frame4.pack(
 )
 frame4.pack_propagate(0)
 
-title = customtkinter.CTkLabel(frame4, text="Movie Title", font=("Arial", 25))
+title = customtkinter.CTkLabel(frame4, text="Shrek", font=("Arial", 25))
 title.pack(padx=5, pady=5)
 
 # Movie description frame
@@ -91,7 +97,14 @@ frame5.pack(
 )
 frame5.pack_propagate(0)
 Desc = customtkinter.CTkLabel(
-    frame5, text="Movie Description", font=("Arial", 25), wraplength=650
+    frame5,
+    text="""Movie Description\n
+    A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.\n
+    Directors: Andrew Adamson, Vicky Jenson\n
+    Writers: William SteigTed Elliott, Terry Rossio\n
+    Stars: Mike MyersEddie Murphy, Cameron Diaz""",
+    font=("Arial", 25),
+    wraplength=650,
 )
 Desc.pack(padx=5, pady=5)
 
@@ -123,6 +136,15 @@ def pause():
     paused = True
     pygame.mixer.music.pause()
 
+
+trailer = customtkinter.CTkLabel(
+    window.tab("Trailer"),
+    text="Movie Trailer",
+    font=("Arial", 15),
+    wraplength=150,
+)
+trailer.pack(padx=5, pady=5)
+trailer.pack_propagate()
 
 video_player = TkinterVideo(master=window.tab("Trailer"), scaled=True)
 video_player.pack(padx=20, pady=10, anchor="center", expand=True, fill="both")
