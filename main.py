@@ -13,7 +13,7 @@ customtkinter.set_default_color_theme("dark-blue")
 root = customtkinter.CTk()
 
 # setting the title and size of the window
-root.title("Image Editor")
+root.title("Movie Reviews")
 root.geometry("1000x650")
 root.minsize(1000, 650)
 
@@ -62,10 +62,10 @@ frame3.pack_propagate(0)
 moreinfo = customtkinter.CTkLabel(
     frame3,
     text="""\nMore Info
-    Realeas: 2001
+    Released: 2001
     Age rating: PG
     Duration: 1h 30m""",
-    font=("Arial", 15),
+    font=("Arial", 20),
     wraplength=150,
 )
 moreinfo.pack(padx=5, pady=5)
