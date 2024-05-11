@@ -14,11 +14,11 @@ class main(customtkinter.CTk):
         title = customtkinter.CTkLabel(window, text="ALL MOVIES", font=("Arial", 25))
         title.pack(padx=5, pady=5)
         self.icon_images = [
-            ("Movie1", r"movieProject\Assets\Posters\Shrek+Poster.png", 1),
-            ("Movie1", r"movieProject\Assets\Posters\Shrek+Poster.png", 2),
-            ("Movie1", r"movieProject\Assets\Posters\Shrek+Poster.png", 3),
-            ("Movie1", r"movieProject\Assets\Posters\Shrek+Poster.png", 4),
-            ("Movie1", r"movieProject\Assets\Posters\Shrek+Poster.png", 5),
+            ("Movie1", r"Assets\Posters\Shrek+Poster.png", 1),
+            ("Movie1", r"Assets\Posters\Shrek+Poster.png", 2),
+            ("Movie1", r"Assets\Posters\Shrek+Poster.png", 3),
+            ("Movie1", r"Assets\Posters\Shrek+Poster.png", 4),
+            ("Movie1", r"Assets\Posters\Shrek+Poster.png", 5),
             # Add more images here
         ]
 

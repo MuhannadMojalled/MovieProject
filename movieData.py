@@ -29,9 +29,9 @@ class moviesData:
                 "William Steig, Ted Elliott, Terry Rossio",
                 "Andrew Adamson, Vicky Jenson",
                 "A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.",
-                r"movieProject\Assets\Posters\Shrek+Poster.png",
-                r"movieProject\Assets\Trailers\Shrek 2001 Official Trailer.mp4",
-                r"movieProject\Assets\Sounds\y2mate.com - Shrek 2001 Official Trailer.mp3",
+                r"Assets\Posters\Shrek+Poster.png",
+                r"Assets\Trailers\Shrek 2001 Official Trailer.mp4",
+                r"Assets\Sounds\y2mate.com - Shrek 2001 Official Trailer.mp3",
                 sentiments,
             ],
         }
