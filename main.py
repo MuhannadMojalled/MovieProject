@@ -15,10 +15,10 @@ class main(customtkinter.CTk):
         title.pack(padx=5, pady=5)
         self.icon_images = [
             ("Movie1", r"Assets\Posters\Shrek+Poster.png", 1),
-            ("Movie1", r"Assets\Posters\Shrek+Poster.png", 2),
-            ("Movie1", r"Assets\Posters\Shrek+Poster.png", 3),
-            ("Movie1", r"Assets\Posters\Shrek+Poster.png", 4),
-            ("Movie1", r"Assets\Posters\Shrek+Poster.png", 5),
+            ("Movie2", r"Assets\Posters\thedarknight.jpg", 2),
+            ("Movie3", r"Assets\Posters\The Matrix.jpg", 3),
+            ("Movie4", r"Assets\Posters\DunePartTwo.jpg", 4),
+            ("Movie5", r"Assets\Posters\back-to-the-future-i2795.jpg", 5),
             # Add more images here
         ]
 
