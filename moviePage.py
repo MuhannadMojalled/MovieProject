@@ -138,7 +138,7 @@ class moviePage(customtkinter.CTkToplevel):
         img_label = customtkinter.CTkLabel(
             frame2,
             text=movieData[3],
-            text_color="black",
+            text_color="white",
             font=("Arial", 25),
             compound="center",
             image=tkimage,
