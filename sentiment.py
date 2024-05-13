@@ -69,15 +69,46 @@ class sentiment:
         return detailed_reviews
 
     # *Delete This After Editing*  Example reviews, Muhanned choice the best method that you would like on providing The Reviews.
-    reviews = [
-        "got the 4D experience by forgetting to drink water today and watching this extremely dehydrated",
-        "not bad if u ever just feel like staring at the color orange and not feeling a single emotion for two and a half hours",
-        "favourite movie.",
-        "155 minutes of industrial design and thousand-yard-stares while Hans Zimmer honks at you with his giant mechanical goose.",
-    ]
+    reviews = {
+        "Movie1": [
+            "here is actually no reason to watch this",
+            "Damn this really ruined Shrek’s track record",
+            "if there's at least one thing this film got right, it's that taking the stamps oD envelopes in -postboxes truly is one of the most evil things you can do",
+            "every time I watch this a new quote absolutely sends me. this time it was 'avast, ye cookie!' i honest to god almost cried",
+            "THIS MOVIE IS JUST ACTION UPON ACTION UPON ACTION THEY DONT LET U REST ONE MOMENT EVERYTHING IS SO FUCKING GOOD",
+        ],
+        "Movie2": [
+            "I'm not trying to be contrarian here, or drop a hyperbolic statement. I just find TDK to be one of the more overrated films in recent times. The editing, dialogue.....it's so clunky.",
+            "This gets worse every time I watch it.",
+            "the best superhero movie ever made. Period",
+            "The greatest comic book movie of all time.",
+            "Probably the movie that made me realize that super cool fights aren't the most compelling part of a superhero film. This film molded my 'film-making style' and I hope to create something at least half as good as this in my lifetime.",
+        ],
+        "Movie3": [
+            "Every time I watch The Matrix I am certain it’s the best movie of all time",
+            "I hate this film I hate their stupid sunglasses I hate their stupid coats I HATE IT ALL",
+            "I really wanted to love this movie but i didn't even like it. apologies to my man keanu reeves.",
+            "I'll say I engaged a bit more on with this on rewatch. Epic moments of action. This is actually pretty decent. I'm not like in LOVE with it but it has some nice stuD.",
+            " this is actually like the coolest movie ever had to show it to my girlfriend after just watching it yesterday for the first time ",
+        ],
+        "Movie4": [
+            "This is truly the cinematic event of our generation… don’t take it for granted 100/100",
+            "Easily the second best movie starring Timothée and Florence",
+            "The worst film I've ever seen (I accidentally walked into Madame Web).",
+            "If Dune has 1,000 haters, i’m one of them. If Dune has 10 haters, i’m one of them. If Dune has 1 hater, it’s me. If Dune has no haters, i’m dead.",
+            "I don’t think it was such a good idea to give the messiah the nuclear launch codes",
+        ],
+        "Movie5": [
+            "Back to the future is a top 5 movie of all time. One of the most brilliant pieces of art that has ever been created. The acting, the score, the script and most important the many chekhovs guns ake this film a masterpiece!",
+            "It is so boring and overrated! The only reason people like it because it was original, it’s not anymore and it sucks",
+            "I'ts one of the movie's that you only really watch with your family.But i personally love that.",
+            "i have never been so immensely pissed off at a movie in my life",
+            "Man I can watch this trilogy 5 times and i can watch this trilogy 500 times, it never gets old for me. these movies are classics and constantly stand the test of time for film. I love rewatching this trilogy. Up next is part 2",
+        ],
+    }
 
-    def getInfo(self):
-        s = self.MovieSentimentReview(self.reviews)
+    def getInfo(self, movieId):
+        s = self.MovieSentimentReview(self.reviews[movieId])
         sentiments = self.returnInfo(s)
         # print(sentiments)
         return sentiments
