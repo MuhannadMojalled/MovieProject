@@ -7,6 +7,8 @@ import os
 os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
 import pygame
 
+# the page for each movie
+
 
 class moviePage(customtkinter.CTkToplevel):
     def __init__(self, master, movieId):

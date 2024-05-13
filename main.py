@@ -3,6 +3,8 @@ import customtkinter
 from PIL import Image, ImageTk
 from moviePage import moviePage
 
+# Main python file
+
 
 class main(customtkinter.CTk):
     def __init__(self):
@@ -14,12 +16,12 @@ class main(customtkinter.CTk):
         title = customtkinter.CTkLabel(window, text="ALL MOVIES", font=("Arial", 25))
         title.pack(padx=5, pady=5)
         self.icon_images = [
+            # posters for each movie
             ("Movie1", r"Assets\Posters\Shrek+Poster.png", 1),
             ("Movie2", r"Assets\Posters\thedarknight.jpg", 2),
             ("Movie3", r"Assets\Posters\The Matrix.jpg", 3),
             ("Movie4", r"Assets\Posters\DunePartTwo.jpg", 4),
             ("Movie5", r"Assets\Posters\back-to-the-future-i2795.jpg", 5),
-            # Add more images here
         ]
 
         self.create_icons(window)

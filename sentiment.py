@@ -5,6 +5,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 from nltk.corpus import stopwords
 
+# class for sentiment analysis of the movie reviews
+
 
 class sentiment:
     def __init__(self):
@@ -68,7 +70,6 @@ class sentiment:
 
         return detailed_reviews
 
-    # *Delete This After Editing*  Example reviews, Muhanned choice the best method that you would like on providing The Reviews.
     reviews = {
         "Movie1": [
             "here is actually no reason to watch this",
