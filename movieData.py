@@ -7,7 +7,7 @@ class moviesData:
 
     def getMovieData(movieId):
         sentimentsObject = sentiment()
-        sentiments = sentimentsObject.getInfo()
+        sentiments = sentimentsObject.getInfo(movieId)
         moviesData = {
             "MovieID": [
                 "Movie Name",
